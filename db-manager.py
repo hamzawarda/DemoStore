@@ -1,0 +1,10 @@
+import sqlite3
+conn= sqlite3.connect("demoStoreDb.db")
+c= conn.cursor()
+#c.execute("CREATE TABLE Products (name TEXT, price INTEGER, details TEXT, pic BLOB);")
+#c.execute('INSERT INTO Products (name, price, details) VALUES ("Water Ball", 10, "Blue 50ml water Ball for children");')
+c.execute('SELECT rowid,* FROM Products')
+c.fetchall()
+print(c.description)
+conn.commit()
+conn.close()
